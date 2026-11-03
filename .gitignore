@@ -1,0 +1,6 @@
+__pycache__/
+.ruff_cache/
+.pytest_cache/
+.DS_Store
+*.html
+!skills/human-in-the-loop/scripts/template.html

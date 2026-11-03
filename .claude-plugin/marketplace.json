@@ -1,0 +1,21 @@
+{
+  "name": "ai-lab-skills",
+  "owner": {
+    "name": "AI Lab"
+  },
+  "metadata": {
+    "description": "Скиллы для участников AI Lab",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "human-in-the-loop",
+      "description": "Одноразовая страница в браузере для ответов человека агенту: анкета, утверждение документа, слепая разметка; на выходе JSON для агента",
+      "source": "./",
+      "strict": false,
+      "skills": [
+        "./skills/human-in-the-loop"
+      ]
+    }
+  ]
+}

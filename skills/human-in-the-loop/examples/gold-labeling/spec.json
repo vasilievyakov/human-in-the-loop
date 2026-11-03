@@ -1,0 +1,1810 @@
+{
+  "title": "Эталон для судьи: 30 материалов",
+  "numbered": true,
+  "file_stem": "gold-labels",
+  "intro": "Ответь на вопросы по каждому материалу так, как ответил бы сам. Ответов судьи здесь нет, чтобы они не подсказывали. По этой разметке считается точность судьи (порог от 90%). Компания и тон спрашиваются, только если материал про рынок AI.",
+  "task": "Эталон судьи. Сохрани JSON и запусти scripts/score.py labels.json sidecar.json --spec spec.json.",
+  "general_comment": false,
+  "items": [
+    {
+      "id": "421",
+      "heading": "Show HN: ThreadShelf – Obsidian and AI chats: vector search, MCP, llama.cpp",
+      "meta": "Hacker News: Llama",
+      "link": "https://github.com/ChrystianSchutz/ThreadShelf",
+      "body": "# ChrystianSchutz/ThreadShelf\n\nLocal-first archive, semantic search, and continuation for AI conversations across ChatGPT, Claude, Gemini, Grok, OpenRouter, LM Studio and Google/Gemini Ai Studio \n\n- Stars: 12\n- Forks: 4\n- Watchers: 12\n- Open issues: 9\n- License: MIT License\n- Default branch: main\n- Created: 2026-07-29T21:39:54Z\n\n## Languages\n\n- HTML\n- JavaScript\n- SCSS\n- TypeScript\n\n## Topics\n\n- …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "585",
+      "heading": "Microsoft AI CEO warns industry against trying to build conscious machines",
+      "meta": "Exa: компании из списка",
+      "link": "https://www.latimes.com/business/story/2026-11-01/if-we-say-ais-deserve-rights-it-could-start-to-believe-it-microsoft-ceo-says",
+      "body": "If we say AI deserves rights, it could start to believe it, Microsoft AI CEO says - Los Angeles Times\n\n# Microsoft AI CEO warns industry against trying to build conscious machines\n\nMicrosoft AI Chief Executive Mustafa Suleyman, in an X post on Sunday, reiterated that current AI systems are not conscious, lack subjective experience and cannot suffer. He made the comments in response to pushback he …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "353",
+      "heading": "The conversation expanded to approximately 559,000 words and 1,492 messages",
+      "meta": "Hacker News: OpenAI",
+      "link": "https://explore.openaire.eu/search/publication?pid=10.5281%2Fzenodo.23686384",
+      "body": "",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "584",
+      "heading": "Microsoft AI chief says AI is not conscious and we should keep it that way",
+      "meta": "Exa: компании из списка",
+      "link": "https://www.businessinsider.com/mustafa-suleyman-microsoft-ai-consciousness-2026-11",
+      "body": "Microsoft AI Chief: AI Is Not Conscious and We Should Keep It That Way - Business Insider\n\n# Microsoft AI chief says AI is not conscious and we should keep it that way\n\nBy\n\nLauren Edmonds\n\n \n\nToggle image caption \n\n Microsoft AI CEO Mustafa Suleyman cautioned against building conscious superintelligence on X. Stephen Brashear/Getty Images \n\n 2026-11-01T19:45:17.492Z \n\nSome AI researchers are …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "373",
+      "heading": "Великий уравнитель: Как чистая математика сокрушит ИИ‑империи Кремниевой долины и Пекина",
+      "meta": "Хабр: ИИ",
+      "link": "https://habr.com/ru/articles/1102656/?utm_campaign=1102656&utm_source=habrahabr&utm_medium=rss",
+      "body": "<img src=\"https://habrastorage.org/extt/92/71/b3/9271b3c39d3baad7f81c6bd42674f00e.png\" /><p>Мировой рынок искусственного интеллекта превращается в&nbsp;закрытый элитарный клуб. Несколько американских корпораций&nbsp;— Microsoft, Google, Meta, Anthropic&nbsp;— фактически монополизировали создание «цифрового сверхразума». Они сами диктуют правила, скупают атомные электростанции и строят вокруг …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "587",
+      "heading": "Apple’s new CEO Ternus to face first earnings test as memory costs surge By Reuters",
+      "meta": "Exa: компании из списка",
+      "link": "https://www.investing.com/news/stock-market-news/apples-new-ceo-ternus-to-face-first-earnings-test-as-memory-costs-surge-4989863",
+      "body": "Apple’s new CEO Ternus to face first earnings test as memory costs surge By Reuters\n\n# Apple’s new CEO Ternus to face first earnings test as memory costs surge\n\nBy\n\nPublished Nov 02, 2026, 12:05 AM\n\nUpdated Nov 02, 2026, 06:06 AM\n\n© Reuters. FILE PHOTO: John Ternus, Apple CEO greets and takes photos with customers who came to purchase the new foldable iPhone Duo on the launch day at the Apple …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "447",
+      "heading": "Show HN: Detox Mode – A Flutter app to help reduce smartphone distractions",
+      "meta": "Hacker News: Mistral",
+      "link": "https://play.google.com/store/apps/details?id=com.saurabh.detox&hl=en_US",
+      "body": "",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "457",
+      "heading": "Ask HN: What is your backup plan when AI companies rug pull their prices?",
+      "meta": "Hacker News: Anthropic",
+      "link": "https://news.ycombinator.com/item?id=50336034",
+      "body": "It seems inevitable that Anthropic and OpenAI will either raise prices or nerf their models for cost savings. What are the most competitive alternatives for something like Claude Code? Are there any good coding models that can run on an M5 Mac yet? What’s the best agentic coding harness?",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "453",
+      "heading": "Mistral-Large-4-1T-A52B",
+      "meta": "Hacker News: Mistral",
+      "link": "https://huggingface.co/mistralai/Mistral-Large-4-1T-A52B",
+      "body": "# Mistral Large 4 - Le Chonk \n\nMistral Large 4 is our largest and most capable model to date: a 1 trillion-parameter natively multimodal Mixture-of-Experts model with 49 billion active parameters per token (52 billion including embeddings and output layers), trained from scratch on 3,800 NVIDIA Grace Blackwell GPUs in Mistral's own datacenters in Europe.\n\nMistral Large 4 unifies instruction …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "367",
+      "heading": "Как измерять видимость сайта в ответах ChatGPT и почему одна итерация вопросов ничего вам не скажет",
+      "meta": "Хабр: ИИ",
+      "link": "https://habr.com/ru/articles/1102722/?utm_campaign=1102722&utm_source=habrahabr&utm_medium=rss",
+      "body": "<img src=\"https://habrastorage.org/extt/1f/94/bf/1f94bf0e8b65065d7f29ca378a805228.jpg\" /><p>Вчера поиск ChatGPT сослался на сайт, сегодня на тот же вопрос ссылки нет. Позиции потеряны? Скорее всего, нет: в <a href=\"https://sparktoro.com/blog/new-research-ais-are-highly-inconsistent-when-recommending-brands-or-products-marketers-should-take-care-when-tracking-ai-visibility/?office=6129\" …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "582",
+      "heading": "Meta says it met Hong Kong privacy watchdog over AI-enabled glasses concerns | South China Morning Post",
+      "meta": "Exa: компании из списка",
+      "link": "https://www.scmp.com/news/hong-kong/society/article/3373007/meta-says-it-met-hong-kong-privacy-watchdog-over-ai-enabled-glasses-concerns",
+      "body": "Meta says it met Hong Kong privacy watchdog over AI-enabled glasses concerns | South China Morning Post\n\n# Meta says it met Hong Kong privacy watchdog over AI-enabled glasses concerns\n\nOffice of the Privacy Commissioner for Personal Data earlier warned tech giant’s product may enable covert recording, excessive personal data collection\n\nGo to slide 1 Go to slide 2\n\nWynna Wong\n\nPublished: 7:39pm, …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "573",
+      "heading": "Mistral Large 4",
+      "meta": "Hacker News: Mistral",
+      "link": "https://mistral.ai/news/mistral-large-4/",
+      "body": "<a href=\"https:&#x2F;&#x2F;docs.mistral.ai&#x2F;models&#x2F;mistral-large-4-0\" rel=\"nofollow\">https:&#x2F;&#x2F;docs.mistral.ai&#x2F;models&#x2F;mistral-large-4-0</a>",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "424",
+      "heading": "Show HN: Ollama client library for Golang with streaming API support",
+      "meta": "Hacker News: Llama",
+      "link": "https://github.com/okunix/gollama",
+      "body": "# okunix/gollama\n\nollama api client for golang\n\n- Stars: 1\n- Forks: 0\n- Watchers: 1\n- Open issues: 0\n- License: MIT License\n- Default branch: main\n- Created: 2026-07-07T16:53:11Z\n\n## Languages\n\n- Go\n\n## Top Contributors\n\n- okunix (32 contributions)\n\n---\n\n## README\n\n# gollama\n\nA Go client library for the Ollama API.\n\nManage models, generate completions, chat, and create embeddings against a local …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "438",
+      "heading": "Show HN: Nonce – Open-source, least-privilege Gmail access for AI agents",
+      "meta": "Hacker News: Grok",
+      "link": "https://www.anonce.io/",
+      "body": "Hi HN! We built nonce, an open-source tool that sits between personal AI agents (Muse, Grok, ChatGPT, Claude) and your personal data in Gmail, Calendar, Drive and more.<p>Today, if you connect Gmail to an AI agent like Muse, it can read your entire inbox. Whether on purpose or not, they can read far more emails than needed. This poses a huge data-privilege risk, in which personal data is accessed …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "382",
+      "heading": "We have lift off: building a Gemini server in Python",
+      "meta": "Hacker News: Gemini",
+      "link": "https://www.willmunn.xyz/gemini/python/2026/10/16/we-have-lift-off.html",
+      "body": "We have lift off 🚀: building a gemini server in python | right click inspect\n\n# We have lift off 🚀: building a gemini server in python\n\n Oct 16, 2026 \n\n7 years after its invention, I discovered the Gemini protocol. It’s a kind of “back to first principals” alternative to the web, aimed at providing value to independent content creators away from the noise, bots and trackers of the main …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "591",
+      "heading": "DeepSeek unveils architecture for one AI to coordinate multiple agents | Lianhe Zaobao",
+      "meta": "Exa: компании из списка",
+      "link": "https://www.zaobao.com.sg/en/news/china/deepseek-unveils-architecture-one-ai-coordinate-multiple-agents",
+      "body": "DeepSeek unveils architecture for one AI to coordinate multiple agents | Lianhe Zaobao\n\nPublished/ 2 Nov 2026 10:19\n\n# DeepSeek unveils architecture for one AI to coordinate multiple agents\n\nAI-translated article with transliterated names. Read original Chinese article here.\n\nDeepSeek unveiled a new AI agent architecture on Saturday (31 October). The DeepSeek logo and a keyboard are seen in this …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "430",
+      "heading": "Swedish grocery giants ICA and COOP hit by freezer cyberattack",
+      "meta": "Hacker News: Grok",
+      "link": "https://twitter.com/InsiderGeo/status/2117164877701595165",
+      "body": "",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "407",
+      "heading": "Show HN: A Daily Poem Writing Puzzle",
+      "meta": "Hacker News: DeepSeek",
+      "link": "https://pocketpoems.io",
+      "body": "Hello my beloved tech forum!<p>Earlier this year I moved to a new apartment, and scattered a box of poetry magnets all over my fridge. Whenever people came to visit, I noticed how they always loved making poems of their own, not to mention enjoying the poems others had already created. It became such a fun and entertaining tradition, (especially due to the range of creative messages that my …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "383",
+      "heading": "AI Nerfs: Are Claude, ChatGPT, and Gemini Nerfed Today?",
+      "meta": "Hacker News: Gemini",
+      "link": "https://ai-nerfs.com",
+      "body": "AI Nerf Tracker: Is Claude, ChatGPT, Codex or Gemini Nerfed Today?\n\n# AI- Nerfs.com\n\n7:05 PM PT\n\n MOST COOKED RIGHT NOW · 100% = A NORMAL DAY \n\n Gemini is at 109% \n\n 1.1x its 30d baseline · +18% above Claude & +17% above ChatGPT \n\n C \n\nClaude / Code\n\nchill #3\n\n 93% of own 30d median \n\n💥 OFF THE CHART\n\n100% normal\n\n 🔥 nerfed 3,720 \n\n G \n\nChatGPT / Codex\n\nchill #2\n\n 94% of own 30d median \n\n💥 OFF …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "570",
+      "heading": "Show HN: FoundationForecast: unified API for time series foundation models",
+      "meta": "Hacker News: Mistral",
+      "link": "https://github.com/TimeCopilot/foundationforecast",
+      "body": "It supports forecast, cross-validation, anomaly detection, and exogenous variables for models such as AWS Chronos, Google TimesFM, Mistral Timestral, H2O TimeH2O, Nixtla TimeGPT, etc., under the same API.",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "381",
+      "heading": "Ask HN: Can a NTFS driver for macOS be vibecoded?",
+      "meta": "Hacker News: Gemini",
+      "link": "https://news.ycombinator.com/item?id=50334467",
+      "body": "Ran into this while swapping external drives between Windows and Mac -- it seems the only reliable way to keep the benefits of NTFS (journaling) and allow writes from MacOS is to use third-party $ commercial drivers.<p>I am not knowledgeble about what makes a driver so I asked (Gemini) -- and I am told this involves a fairly complex low level OS hooks and bypassing OS protections etc with a lot …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "377",
+      "heading": "Что такое JEV и зачем он нужен: собираем AI-агента на связке LLM + open-source аналог JEV",
+      "meta": "Хабр: ИИ",
+      "link": "https://habr.com/ru/companies/hostkey/articles/1099428/?utm_campaign=1099428&utm_source=habrahabr&utm_medium=rss",
+      "body": "<p>Разбираемся, что такое JEV, чем модели принятия решений отличаются от привычных LLM и какие у них есть открытые аналоги. А заодно поднимаем Laya и Gemma 4 на собственном сервере и собираем полноценного AI-агента на Python с веб-интерфейсом, классификацией новостей и автоматической публикацией статей. Без облачных API и агентных фреймворков. Все исходники — на GitHub.</p> <a …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "456",
+      "heading": "Anthropic Bans Reverse Engineering with Claude",
+      "meta": "Hacker News: Anthropic",
+      "link": "https://www.techpowerup.com/354351/anthropic-bans-ai-game-clones-and-reverse-engineering-with-claude",
+      "body": "Anthropic Bans AI Game Clones and Reverse Engineering With Claude | TechPowerUp\n\n# Anthropic Bans AI Game Clones and Reverse Engineering With Claude\n\n by \n\nCpt.Jank\n\n Sunday, 05:27 Discuss (18 Comments) \n\nAI game cloning, reverse-engineering, and decompiling have all become increasingly popular of late, with a cottage industry of gaming projects popping up almost overnight, including everything …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "488",
+      "heading": "«Don't fear the REAPer» или как DS себе локальную LLM выбирал",
+      "meta": "Хабр: ИИ",
+      "link": "https://habr.com/ru/articles/1102764/?utm_campaign=1102764&utm_source=habrahabr&utm_medium=rss",
+      "body": "<img src=\"https://habrastorage.org/extt/c6/fd/ea/c6fdea17c17a16f86d8fecb6c1bd8fec.jpg\" /><p>За последние месяцы я протестировал кучу локальных LLM, которые может потянуть моя техника и пришёл к выводу, который для многих уже очевиден: для задач на кодинг альтернатив моделям Qwen особо нет. Поэтому я решил удалить с диска все лишние модели, чтобы оставить только \"рабочих лошадок\". </p><p>В этот …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "432",
+      "heading": "What are the amenities available in Amrapali Verona Heights project?",
+      "meta": "Hacker News: Grok",
+      "link": "https://news.ycombinator.com/item?id=50333874",
+      "body": "If you want to own Amrapali Verona Heights flats in Noida Extension Techzone 4, you&#x27;ll enjoy modern amenities. This Amrapali Group project offers a wide range of amenities, including schools, hospitals, markets, malls, and public facilities, offering spectacular city views. Spread across 25 acres, the project boasts over 30 amenities, including a swimming pool, elevator, jogging track, …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "579",
+      "heading": "AI now leads 26% of Anthropic's AI-model R&D work, company data shows",
+      "meta": "Exa: компании из списка",
+      "link": "https://www.50footmedia.com/anthropic-ai-leads-26-percent-model-rd/",
+      "body": "AI now leads 26% of Anthropic's AI-model R&D work, company data shows\n\n# AI now leads 26% of Anthropic's AI-model R&D work, company data shows\n\nAnthropic says AI now leads 26% of its own AI-model research and development work, up from 1% in early 2026. None of it was fully autonomous as of August, and no outside party has checked the count.\n\n Tom Bedwell 1 Nov 2026 · 3 min read \n\nKey figures\n\n- …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "395",
+      "heading": "Gemini Computer Use API",
+      "meta": "Hacker News: Gemini",
+      "link": "https://ai.google.dev/gemini-api/docs/computer-use",
+      "body": "Computer use | Gemini API | Google AI for Developers\n\n Computer use\n\nThe Computer Use tool lets you build browser, mobile, and desktop control agents that interact with and automate tasks. Using screenshots, the model can \"see\" a computer screen, and \"act\" by generating specific UI actions like mouse clicks and keyboard inputs. Similar to function calling, you will need to implement the …",
+      "collapse": true,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "429",
+      "heading": "Ask HW: Best frontier AI model for mind map generation?",
+      "meta": "Hacker News: Grok",
+      "link": "https://news.ycombinator.com/item?id=50334714",
+      "body": "For my children, \n I need to generate mindmaps from image taken from books.<p>I want to use a frontier model (i.e. Claude, Mistral, ChatGPT, Grok...) but I want the most effective in terms of cost and quality.<p>I was not impressed so much by Mapify or NotebookLM.<p>Do you have some skills &#x2F; suggestions &#x2F; successful stories to share?",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "444",
+      "heading": "Show HN: Doppinow – A Distraction Interrupter for Developers",
+      "meta": "Hacker News: Mistral",
+      "link": "https://doppinow.com/",
+      "body": "",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    },
+    {
+      "id": "388",
+      "heading": "NichiHab Android app blocker with Gemini AI task verification",
+      "meta": "Hacker News: Gemini",
+      "link": "https://github.com/alepoll/NichiHab",
+      "body": "",
+      "collapse": false,
+      "questions": [
+        {
+          "id": "ai",
+          "type": "yesno",
+          "label": "Про рынок AI?",
+          "help": "компании, модели, продукты, сделки, цены, доступ, регулирование, внедрение"
+        },
+        {
+          "id": "company",
+          "type": "choice",
+          "label": "О какой компании",
+          "options": [
+            "OpenAI",
+            "Anthropic",
+            "Google",
+            "Meta",
+            "Microsoft",
+            "Apple",
+            "Nvidia",
+            "DeepSeek",
+            "Mistral",
+            "xAI",
+            "Яндекс",
+            "Сбер",
+            {
+              "value": "none",
+              "label": "ни одной из списка"
+            }
+          ],
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        },
+        {
+          "id": "tone",
+          "type": "scale",
+          "label": "Тон для наших решений",
+          "levels": [
+            "1 плохо",
+            "2 скорее плохо",
+            "3 нейтрально",
+            "4 скорее хорошо",
+            "5 хорошо"
+          ],
+          "colors": true,
+          "show_if": {
+            "question": "ai",
+            "equals": true
+          }
+        }
+      ]
+    }
+  ]
+}

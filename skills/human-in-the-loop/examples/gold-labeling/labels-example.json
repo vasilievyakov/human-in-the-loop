@@ -1,0 +1,234 @@
+{
+  "items": [
+    {
+      "id": "421",
+      "answers": {
+        "ai": true,
+        "company": "none",
+        "tone": 3
+      }
+    },
+    {
+      "id": "585",
+      "answers": {
+        "ai": true,
+        "company": "Microsoft",
+        "tone": 2
+      }
+    },
+    {
+      "id": "353",
+      "answers": {
+        "company": "OpenAI"
+      }
+    },
+    {
+      "id": "584",
+      "answers": {
+        "ai": true,
+        "company": "Microsoft",
+        "tone": 2
+      }
+    },
+    {
+      "id": "373",
+      "answers": {
+        "ai": true,
+        "tone": 3
+      }
+    },
+    {
+      "id": "587",
+      "answers": {
+        "ai": false,
+        "company": "Apple",
+        "tone": 3
+      }
+    },
+    {
+      "id": "447",
+      "answers": {
+        "ai": true,
+        "company": "Mistral",
+        "tone": 3
+      }
+    },
+    {
+      "id": "457",
+      "answers": {
+        "ai": true,
+        "tone": 2
+      }
+    },
+    {
+      "id": "453",
+      "answers": {
+        "ai": true,
+        "company": "Mistral",
+        "tone": 4
+      }
+    },
+    {
+      "id": "367",
+      "answers": {
+        "ai": true,
+        "tone": 4
+      }
+    },
+    {
+      "id": "582",
+      "answers": {
+        "ai": true,
+        "company": "Meta",
+        "tone": 2
+      }
+    },
+    {
+      "id": "573",
+      "answers": {
+        "ai": true,
+        "company": "Mistral",
+        "tone": 4
+      }
+    },
+    {
+      "id": "424",
+      "answers": {
+        "ai": true,
+        "tone": 3
+      }
+    },
+    {
+      "id": "438",
+      "answers": {
+        "ai": true,
+        "company": "none",
+        "tone": 4
+      }
+    },
+    {
+      "id": "382",
+      "answers": {
+        "ai": true,
+        "company": "Google",
+        "tone": 4
+      }
+    },
+    {
+      "id": "591",
+      "answers": {
+        "ai": true,
+        "company": "DeepSeek",
+        "tone": 4
+      }
+    },
+    {
+      "id": "430",
+      "answers": {
+        "ai": true,
+        "company": "none",
+        "tone": 2
+      }
+    },
+    {
+      "id": "407",
+      "answers": {
+        "ai": true,
+        "company": "DeepSeek",
+        "tone": 3
+      }
+    },
+    {
+      "id": "383",
+      "answers": {
+        "ai": true,
+        "tone": 2
+      }
+    },
+    {
+      "id": "570",
+      "answers": {
+        "ai": true,
+        "company": "Mistral",
+        "tone": 4
+      }
+    },
+    {
+      "id": "381",
+      "answers": {
+        "ai": true,
+        "tone": 3
+      }
+    },
+    {
+      "id": "377",
+      "answers": {
+        "ai": true,
+        "company": "none",
+        "tone": 4
+      }
+    },
+    {
+      "id": "456",
+      "answers": {
+        "ai": true,
+        "company": "Anthropic",
+        "tone": 2
+      }
+    },
+    {
+      "id": "488",
+      "answers": {
+        "ai": true,
+        "tone": 3
+      }
+    },
+    {
+      "id": "432",
+      "answers": {
+        "ai": true,
+        "company": "xAI",
+        "tone": 3
+      }
+    },
+    {
+      "id": "579",
+      "answers": {
+        "ai": true,
+        "company": "Anthropic",
+        "tone": 4
+      }
+    },
+    {
+      "id": "395",
+      "answers": {
+        "ai": true,
+        "company": "Google",
+        "tone": 4
+      }
+    },
+    {
+      "id": "429",
+      "answers": {
+        "ai": true,
+        "tone": 3
+      }
+    },
+    {
+      "id": "444",
+      "answers": {
+        "ai": true,
+        "company": "Mistral",
+        "tone": 3
+      }
+    },
+    {
+      "id": "388",
+      "answers": {
+        "ai": true,
+        "company": "Google",
+        "tone": 2
+      }
+    }
+  ]
+}

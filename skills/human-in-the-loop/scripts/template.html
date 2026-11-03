@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Обратная связь</title>
+<style>
+  :root {
+    --bg: #f6f5f1; --card: #fff; --ink: #16161a; --muted: #6b6b72; --line: #e2e0d8;
+    --accent: #bfff00; --ok: #2f8f4e; --edit: #b7791f; --ask: #3b5bdb;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font: 15px/1.55 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", sans-serif; }
+  header { padding: 26px 32px 18px; border-bottom: 1px solid var(--line); background: var(--card); }
+  header h1 { margin: 0 0 6px; font-size: 22px; }
+  header .intro { max-width: 860px; color: #3b3b42; }
+  header .intro p { margin: 4px 0; }
+  header .meta { color: var(--muted); font-size: 12px; margin-top: 8px; }
+  .decision { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+  .layout { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 24px; padding: 24px 32px 120px; max-width: 1280px; }
+  .layout.no-nav { grid-template-columns: minmax(0, 900px); justify-content: center; }
+  nav { position: sticky; top: 16px; align-self: start; font-size: 13px; max-height: calc(100vh - 100px); overflow: auto; }
+  nav a { display: flex; align-items: center; gap: 8px; padding: 5px 8px; border-radius: 6px; color: var(--ink); text-decoration: none; }
+  nav a:hover { background: #ebe9e2; }
+  nav a.l3 { padding-left: 22px; }
+  .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--line); flex: none; }
+  .dot.done, .dot.ok { background: var(--ok); } .dot.edit { background: var(--edit); } .dot.ask { background: var(--ask); }
+  .card { background: var(--card); border: 1px solid var(--line); border-radius: 10px; padding: 18px 22px; margin-bottom: 16px; }
+  .card.l3 { margin-left: 24px; }
+  .card.done, .card.status-ok { border-left: 4px solid var(--ok); }
+  .card.status-edit { border-left: 4px solid var(--edit); }
+  .card.status-ask { border-left: 4px solid var(--ask); }
+  .head { display: flex; gap: 10px; align-items: baseline; color: var(--muted); font-size: 13px; }
+  .head b { color: var(--ink); }
+  .head a { margin-left: auto; color: var(--muted); }
+  .card > h2, .card > h3 { margin: 4px 0 8px; }
+  .card > h2 { font-size: 19px; } .card > h3 { font-size: 16px; }
+  .md p { margin: 6px 0; } .md ul, .md ol { margin: 6px 0; padding-left: 22px; }
+  .md h1 { font-size: 20px; margin: 4px 0 8px; } .md h2 { font-size: 18px; margin: 4px 0 8px; } .md h3, .md h4 { font-size: 15px; margin: 4px 0 6px; }
+  .md code { background: #f0efe9; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  .md table { border-collapse: collapse; margin: 8px 0; font-size: 14px; }
+  .md th, .md td { border: 1px solid var(--line); padding: 5px 10px; text-align: left; }
+  .md th { background: #f3f2ec; }
+  .md.collapsed { max-height: 9.5em; overflow: hidden; }
+  .more { font-size: 13px; background: none; border: none; color: var(--muted); padding: 2px 0; cursor: pointer; text-decoration: underline; }
+  .qs { margin-top: 12px; padding-top: 10px; border-top: 1px dashed var(--line); }
+  .q { padding: 8px 0; }
+  .q .label { font-size: 14px; font-weight: 600; }
+  .q .help { font-size: 12.5px; color: var(--muted); margin: 2px 0 6px; }
+  .opts { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 6px; }
+  .opts.col { flex-direction: column; align-items: flex-start; }
+  button, .opt { font: inherit; font-size: 13px; border: 1px solid var(--line); background: #fff; padding: 5px 11px; border-radius: 999px; cursor: pointer; color: var(--ink); text-align: left; }
+  .opts.col .opt { border-radius: 8px; }
+  button:hover, .opt:hover { border-color: #b9b6aa; }
+  .opt.on, button.on { background: var(--ink); color: var(--accent); border-color: var(--ink); }
+  .opt.scale.on { color: #fff; border-color: transparent; }
+  button.on-ok { background: var(--ok); color: #fff; border-color: var(--ok); }
+  button.on-edit { background: var(--edit); color: #fff; border-color: var(--edit); }
+  button.on-ask { background: var(--ask); color: #fff; border-color: var(--ask); }
+  .controls { display: flex; gap: 8px; flex-wrap: wrap; align-items: center; margin-top: 12px; padding-top: 12px; border-top: 1px dashed var(--line); }
+  .spacer { flex: 1; }
+  .badge { font-size: 12px; color: var(--edit); }
+  textarea { width: 100%; font: inherit; font-size: 14px; border: 1px solid var(--line); border-radius: 8px; padding: 8px 10px; margin-top: 8px; resize: vertical; background: #fcfcfa; min-height: 44px; }
+  textarea.src { font: 13px/1.5 ui-monospace, "SF Mono", Menlo, monospace; }
+  .bar { position: fixed; left: 0; right: 0; bottom: 0; background: var(--ink); color: #fff; padding: 12px 32px; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+  .bar .stat { font-size: 13px; color: #cfcfd4; }
+  .bar button { background: transparent; color: #fff; border-color: #55555c; }
+  .bar button.primary { background: var(--accent); color: var(--ink); border-color: var(--accent); font-weight: 600; }
+  .toast { position: fixed; bottom: 70px; right: 32px; background: var(--accent); color: var(--ink); padding: 8px 14px; border-radius: 8px; font-size: 14px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+  .toast.show { opacity: 1; }
+  @media (max-width: 800px) { .layout { grid-template-columns: 1fr; padding: 16px 12px 140px; } nav { display: none; } }
+</style>
+</head>
+<body>
+<header>
+  <h1 id="title"></h1>
+  <div class="intro md" id="intro"></div>
+  <div class="decision" id="decision"></div>
+  <textarea id="general" placeholder="Общий комментарий (необязательно)"></textarea>
+  <div class="meta" id="meta"></div>
+</header>
+<div class="layout" id="layout">
+  <nav id="nav"></nav>
+  <main id="main"></main>
+</div>
+<div class="bar">
+  <span class="stat" id="stat"></span>
+  <span class="spacer"></span>
+  <button class="primary" id="copyJson">Скопировать JSON для агента</button>
+  <button id="dlJson">Скачать JSON</button>
+  <button id="dlMd" hidden>Скачать Markdown</button>
+  <button id="reset">Сбросить все</button>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+const SPEC = __SPEC__;
+const KEY = "human-in-the-loop:" + SPEC.spec_hash;
+const STATUSES = [["ok", "Согласен"], ["edit", "Нужна правка"], ["ask", "Вопрос"]];
+const blank = () => ({ decision: "", general: "", items: {} });
+let state = JSON.parse(localStorage.getItem(KEY) || "null") || blank();
+const ist = id => (state.items[id] ||= { status: "", comment: "", markdown: null, answers: {}, notes: {} });
+const byId = id => SPEC.items.find(i => i.id === id);
+
+/* ---------- tiny markdown: headings, lists, tables, bold, code, paragraphs ---------- */
+const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+const inline = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
+function md(src) {
+  const lines = String(src || "").split("\n"); let html = "", i = 0;
+  while (i < lines.length) {
+    const l = lines[i]; let m;
+    if (!l.trim()) { i++; continue; }
+    if ((m = l.match(/^(#{1,4}) (.+)/))) { html += `<h${m[1].length}>${inline(m[2])}</h${m[1].length}>`; i++; continue; }
+    if (l.startsWith("|")) {
+      const rows = []; while (i < lines.length && lines[i].startsWith("|")) rows.push(lines[i++]);
+      const cells = r => r.replace(/^\||\|$/g, "").split("|").map(c => c.trim());
+      html += "<table><tr>" + cells(rows[0]).map(c => `<th>${inline(c)}</th>`).join("") + "</tr>";
+      rows.slice(2).forEach(r => html += "<tr>" + cells(r).map(c => `<td>${inline(c)}</td>`).join("") + "</tr>");
+      html += "</table>"; continue;
+    }
+    const ul = /^\s*- /.test(l), ol = /^\s*\d+\. /.test(l);
+    if (ul || ol) {
+      const re = ul ? /^\s*- / : /^\s*\d+\. /, items = [];
+      while (i < lines.length && (re.test(lines[i]) || (/^\s+\S/.test(lines[i]) && items.length))) {
+        if (re.test(lines[i])) items.push(lines[i].replace(re, "")); else items[items.length - 1] += " " + lines[i].trim();
+        i++;
+      }
+      const tag = ul ? "ul" : "ol"; html += `<${tag}>` + items.map(t => `<li>${inline(t)}</li>`).join("") + `</${tag}>`; continue;
+    }
+    const para = []; while (i < lines.length && lines[i].trim() && !/^(#{1,4} |\||\s*- |\s*\d+\. )/.test(lines[i])) para.push(lines[i++].trim());
+    if (!para.length) { para.push(lines[i++].trim()); }
+    html += `<p>${inline(para.join(" ")).replace(/\n/g, "<br>")}</p>`;
+  }
+  return html;
+}
+
+/* ---------- questions ---------- */
+const visibleQ = (item, q) => {
+  const c = q.show_if; if (!c) return true;
+  return JSON.stringify(ist(item.id).answers[c.question]) === JSON.stringify(c.equals);
+};
+const answered = (q, v) => q.type === "multi" ? Array.isArray(v) && v.length > 0 : v !== undefined && v !== null && v !== "";
+function itemComplete(item) {
+  const s = ist(item.id);
+  const req = item.questions.filter(q => q.required && visibleQ(item, q));
+  if (req.length) return req.every(q => answered(q, s.answers[q.id]) || (q.free && (s.notes[q.id] || "").trim()));
+  return !!(s.status || s.comment.trim() || s.markdown !== null);
+}
+function scaleColor(i, n) { const hue = n < 2 ? 0 : Math.round(4 + (130 - 4) * i / (n - 1)); return `hsl(${hue} 58% 46%)`; }
+
+function questionHtml(item, q) {
+  if (!visibleQ(item, q)) return "";
+  const s = ist(item.id), v = s.answers[q.id];
+  const btn = (value, label, extra = "", style = "") => {
+    const on = q.type === "multi" ? Array.isArray(v) && v.includes(value) : JSON.stringify(v) === JSON.stringify(value);
+    return `<button class="opt ${extra} ${on ? "on" : ""}" style="${on ? style : ""}" data-item="${esc(item.id)}" data-q="${esc(q.id)}" data-v="${esc(JSON.stringify(value))}">${esc(label)}</button>`;
+  };
+  let body = "";
+  if (q.type === "yesno") body = `<div class="opts">${btn(true, q.yes || "да")}${btn(false, q.no || "нет")}</div>`;
+  if (q.type === "choice" || q.type === "multi") {
+    const long = q.options.some(o => o.label.length > 40);
+    body = `<div class="opts ${long ? "col" : ""}">${q.options.map(o => btn(o.value, o.label)).join("")}</div>`;
+  }
+  if (q.type === "scale") {
+    body = `<div class="opts">${q.levels.map((l, i) => btn(q.start + i, l, "scale", q.colors ? `background:${scaleColor(i, q.levels.length)}` : "background:var(--ink)")).join("")}</div>`;
+  }
+  const note = q.type === "text" || q.free;
+  const noteVal = q.type === "text" ? (v || "") : (s.notes[q.id] || "");
+  const ph = q.type === "text" ? (q.placeholder || "Ответ") : (q.free_placeholder || "Свой ответ или уточнение");
+  return `<div class="q"><div class="label">${esc(q.label)}</div>${q.help ? `<div class="help">${inline(q.help)}</div>` : ""}${body}
+    ${note ? `<textarea data-note="${esc(item.id)}" data-q="${esc(q.id)}" data-text="${q.type === "text" ? 1 : 0}" placeholder="${esc(ph)}">${esc(noteVal)}</textarea>` : ""}</div>`;
+}
+
+/* ---------- cards ---------- */
+function cardHtml(item) {
+  const s = ist(item.id), text = s.markdown ?? item.body, h = item.level >= 3 ? "h3" : "h2";
+  const cls = s.status ? "status-" + s.status : (itemComplete(item) ? "done" : "");
+  let html = `<section class="card l${item.level} ${cls}" id="c-${esc(item.id)}">`;
+  if (item.meta || item.link || SPEC.numbered) html += `<div class="head">${SPEC.numbered ? `<b>${item.n}</b>` : ""}<span>${esc(item.meta || "")}</span>${item.link ? `<a href="${esc(item.link)}" target="_blank" rel="noopener">открыть</a>` : ""}</div>`;
+  if (item.heading) html += `<${h}>${inline(item.heading)}</${h}>`;
+  if (text) html += `<div class="md ${item.collapse ? "collapsed" : ""}" data-body>${md(text)}</div>${item.collapse ? `<button class="more" data-more>показать все</button>` : ""}`;
+  if (item.questions.length) html += `<div class="qs">${item.questions.map(q => questionHtml(item, q)).join("")}</div>`;
+  if (item.status || item.editable) {
+    html += `<div class="controls">`;
+    if (item.status) html += STATUSES.map(([v, l]) => `<button class="${s.status === v ? "on-" + v : ""}" data-status="${v}" data-item="${esc(item.id)}">${l}</button>`).join("");
+    html += `<span class="spacer"></span>`;
+    if (item.editable) {
+      if (s.markdown !== null) html += `<span class="badge">текст изменен</span><button data-revert="${esc(item.id)}">Вернуть исходный</button>`;
+      html += `<button data-toggle-src="${esc(item.id)}">Править текст</button>`;
+    }
+    html += `</div>`;
+    if (item.editable) html += `<textarea class="src" data-src="${esc(item.id)}" rows="${Math.min(30, text.split("\n").length + 2)}" hidden>${esc(text)}</textarea>`;
+  }
+  if (item.comment) html += `<textarea data-comment="${esc(item.id)}" placeholder="Комментарий агенту (необязательно)">${esc(s.comment)}</textarea>`;
+  return html + `</section>`;
+}
+
+function rerender(id) {
+  const old = document.getElementById("c-" + id); if (!old) return;
+  const srcOpen = old.querySelector("textarea.src") && !old.querySelector("textarea.src").hidden;
+  const expanded = old.querySelector("[data-body]") && !old.querySelector("[data-body]").classList.contains("collapsed");
+  const tmp = document.createElement("div"); tmp.innerHTML = cardHtml(byId(id)); const fresh = tmp.firstElementChild;
+  old.replaceWith(fresh);
+  if (srcOpen) fresh.querySelector("textarea.src").hidden = false;
+  if (expanded && byId(id).collapse) { fresh.querySelector("[data-body]").classList.remove("collapsed"); fresh.querySelector("[data-more]").textContent = "свернуть"; }
+}
+
+function renderNav() {
+  const nav = document.getElementById("nav");
+  if (SPEC.items.length < 4) { nav.hidden = true; document.getElementById("layout").classList.add("no-nav"); return; }
+  nav.innerHTML = SPEC.items.map(i => {
+    const s = ist(i.id), c = s.status || (itemComplete(i) ? "done" : "");
+    const label = i.heading || i.meta || i.id;
+    return `<a href="#c-${esc(i.id)}" class="l${i.level}"><span class="dot ${c}"></span>${SPEC.numbered ? i.n + ". " : ""}${esc(label.length > 60 ? label.slice(0, 57) + "..." : label)}</a>`;
+  }).join("");
+}
+
+function renderStat() {
+  const done = SPEC.items.filter(itemComplete).length;
+  const dec = (SPEC.decisions.find(d => d.value === state.decision) || {}).label;
+  const parts = [`готово ${done} из ${SPEC.items.length}`];
+  if (SPEC.decisions.length) parts.unshift(dec || "решение не выбрано");
+  document.getElementById("stat").textContent = parts.join(" · ");
+}
+
+function renderHeader() {
+  document.title = SPEC.title;
+  document.getElementById("title").textContent = SPEC.title;
+  document.getElementById("intro").innerHTML = md(SPEC.intro);
+  document.getElementById("meta").textContent = `версия ${SPEC.spec_hash} · ответы сохраняются в этом браузере`;
+  document.getElementById("decision").innerHTML = SPEC.decisions.map(d => `<button class="${state.decision === d.value ? "on" : ""}" data-decision="${esc(d.value)}">${esc(d.label)}</button>`).join("");
+  const g = document.getElementById("general"); g.hidden = !SPEC.general_comment; g.value = state.general;
+  document.getElementById("dlMd").hidden = !SPEC.markdown_export;
+}
+
+const save = () => { localStorage.setItem(KEY, JSON.stringify(state)); renderNav(); renderStat(); };
+function render() {
+  renderHeader();
+  document.getElementById("main").innerHTML = SPEC.items.map(cardHtml).join("");
+  renderNav(); renderStat();
+}
+
+/* ---------- events ---------- */
+document.addEventListener("click", e => {
+  const t = e.target.closest("button"); if (!t) return;
+  if (t.dataset.decision !== undefined) { state.decision = state.decision === t.dataset.decision ? "" : t.dataset.decision; save(); renderHeader(); return; }
+  if (t.dataset.status) { const s = ist(t.dataset.item); s.status = s.status === t.dataset.status ? "" : t.dataset.status; save(); rerender(t.dataset.item); return; }
+  if (t.dataset.q && t.dataset.v !== undefined) {
+    const item = byId(t.dataset.item), q = item.questions.find(x => x.id === t.dataset.q), s = ist(item.id), v = JSON.parse(t.dataset.v);
+    if (q.type === "multi") { const cur = s.answers[q.id] || []; s.answers[q.id] = cur.includes(v) ? cur.filter(x => x !== v) : cur.concat([v]); }
+    else s.answers[q.id] = JSON.stringify(s.answers[q.id]) === JSON.stringify(v) ? null : v;
+    save(); rerender(item.id); return;
+  }
+  if (t.dataset.toggleSrc) { const a = document.querySelector(`#c-${CSS.escape(t.dataset.toggleSrc)} textarea.src`); a.hidden = !a.hidden; if (!a.hidden) a.focus(); return; }
+  if (t.dataset.revert) { ist(t.dataset.revert).markdown = null; save(); rerender(t.dataset.revert); return; }
+  if (t.dataset.more !== undefined) { const b = t.parentElement.querySelector("[data-body]"); b.classList.toggle("collapsed"); t.textContent = b.classList.contains("collapsed") ? "показать все" : "свернуть"; }
+});
+document.addEventListener("input", e => {
+  const t = e.target;
+  if (t.id === "general") { state.general = t.value; save(); return; }
+  if (t.dataset.comment) { const s = ist(t.dataset.comment); s.comment = t.value; if (t.value.trim() && !s.status && byId(t.dataset.comment).status) s.status = "edit"; save(); return; }
+  if (t.dataset.note) { const s = ist(t.dataset.note); if (t.dataset.text === "1") s.answers[t.dataset.q] = t.value; else s.notes[t.dataset.q] = t.value; save(); return; }
+  if (t.dataset.src) {
+    const item = byId(t.dataset.src), s = ist(item.id);
+    s.markdown = t.value === item.body ? null : t.value;
+    if (s.markdown !== null && !s.status && item.status) s.status = "edit";
+    const body = document.querySelector(`#c-${CSS.escape(item.id)} [data-body]`); if (body) body.innerHTML = md(t.value);
+    save();
+  }
+});
+document.addEventListener("focusout", e => { if (e.target.dataset && e.target.dataset.src) rerender(e.target.dataset.src); });
+
+/* ---------- export ---------- */
+function exportJson() {
+  const items = [];
+  for (const item of SPEC.items) {
+    const s = state.items[item.id]; if (!s) continue;
+    const out = { id: item.id, heading: item.heading };
+    if (s.status) out.status = s.status;
+    if (s.comment && s.comment.trim()) out.comment = s.comment.trim();
+    if (s.markdown !== null && s.markdown !== undefined) { out.markdown_old = item.body; out.markdown_new = s.markdown; }
+    const answers = {}, notes = {};
+    for (const q of item.questions) {
+      if (!visibleQ(item, q)) continue;
+      const v = s.answers[q.id];
+      if (answered(q, v)) answers[q.id] = typeof v === "string" ? v.trim() : v;
+      if (s.notes[q.id] && s.notes[q.id].trim()) notes[q.id] = s.notes[q.id].trim();
+    }
+    if (Object.keys(answers).length) out.answers = answers;
+    if (Object.keys(notes).length) out.notes = notes;
+    if (Object.keys(out).length > 2) items.push(out);
+  }
+  return { task: SPEC.task, title: SPEC.title, spec_hash: SPEC.spec_hash, exported_at: new Date().toISOString(),
+    decision: state.decision || "", general_comment: (state.general || "").trim(), items };
+}
+
+function answerText(q, v) {
+  if (q.type === "yesno") return v ? (q.yes || "да") : (q.no || "нет");
+  if (q.type === "scale") return q.levels[v - q.start] ?? String(v);
+  const label = x => (q.options || []).find(o => JSON.stringify(o.value) === JSON.stringify(x))?.label ?? String(x);
+  return q.type === "multi" ? v.map(label).join(", ") : q.type === "choice" ? label(v) : String(v);
+}
+function exportMd() {
+  return SPEC.items.map(item => {
+    const s = state.items[item.id] || { answers: {}, notes: {} };
+    const parts = [];
+    if (item.heading) parts.push(`${item.level >= 3 ? "###" : "##"} ${item.heading}`);
+    const body = s.markdown ?? item.body; if (body) parts.push(body);
+    const ans = item.questions.filter(q => visibleQ(item, q)).map(q => {
+      const v = (s.answers || {})[q.id], n = (s.notes || {})[q.id];
+      const t = [answered(q, v) ? answerText(q, v) : "", (n || "").trim()].filter(Boolean).join(". ");
+      return t ? `- ${q.label}: ${t}` : null;
+    }).filter(Boolean);
+    if (ans.length) parts.push("**Ответы владельца**\n\n" + ans.join("\n"));
+    if (s.comment && s.comment.trim()) parts.push(`> Комментарий владельца: ${s.comment.trim().replace(/\n/g, " ")}`);
+    return parts.join("\n\n");
+  }).join("\n\n") + "\n";
+}
+
+function download(name, text, type) {
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([text], { type })); a.download = name;
+  document.body.append(a); a.click(); a.remove();
+}
+function toast(t) { const x = document.getElementById("toast"); x.textContent = t; x.classList.add("show"); setTimeout(() => x.classList.remove("show"), 1800); }
+const slug = (SPEC.file_stem || "feedback");
+document.getElementById("copyJson").onclick = async () => {
+  const text = JSON.stringify(exportJson(), null, 2);
+  try { await navigator.clipboard.writeText(text); toast("JSON скопирован, вставь в чат с агентом"); }
+  catch { download(slug + ".json", text, "application/json"); toast("Буфер недоступен, JSON скачан"); }
+};
+document.getElementById("dlJson").onclick = () => download(slug + ".json", JSON.stringify(exportJson(), null, 2), "application/json");
+document.getElementById("dlMd").onclick = () => download(slug + ".md", exportMd(), "text/markdown");
+document.getElementById("reset").onclick = e => {
+  const b = e.target;
+  if (!b.dataset.armed) { b.dataset.armed = 1; b.textContent = "Точно сбросить? Нажми еще раз"; return; }
+  localStorage.removeItem(KEY); state = blank(); delete b.dataset.armed; b.textContent = "Сбросить все"; render();
+};
+
+render();
+</script>
+</body>
+</html>

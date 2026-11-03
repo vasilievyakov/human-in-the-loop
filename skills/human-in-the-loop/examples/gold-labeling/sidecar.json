@@ -1,0 +1,155 @@
+{
+  "note": "hidden judge answers (Jev), the page never sees this file",
+  "answers": {
+    "421": {
+      "ai": true,
+      "company": "none",
+      "tone": 4
+    },
+    "585": {
+      "ai": true,
+      "company": "Microsoft",
+      "tone": 4
+    },
+    "353": {
+      "ai": false,
+      "company": "none",
+      "tone": 3
+    },
+    "584": {
+      "ai": true,
+      "company": "Microsoft",
+      "tone": 3
+    },
+    "373": {
+      "ai": true,
+      "company": "none",
+      "tone": 2
+    },
+    "587": {
+      "ai": true,
+      "company": "Apple",
+      "tone": 2
+    },
+    "447": {
+      "ai": false,
+      "company": "none",
+      "tone": 3
+    },
+    "457": {
+      "ai": true,
+      "company": "Anthropic",
+      "tone": 3
+    },
+    "453": {
+      "ai": true,
+      "company": "Mistral",
+      "tone": 5
+    },
+    "367": {
+      "ai": false,
+      "company": "OpenAI",
+      "tone": 3
+    },
+    "582": {
+      "ai": true,
+      "company": "Meta",
+      "tone": 2
+    },
+    "573": {
+      "ai": true,
+      "company": "Mistral",
+      "tone": 4
+    },
+    "424": {
+      "ai": true,
+      "company": "Meta",
+      "tone": 4
+    },
+    "438": {
+      "ai": true,
+      "company": "none",
+      "tone": 4
+    },
+    "382": {
+      "ai": false,
+      "company": "none",
+      "tone": 3
+    },
+    "591": {
+      "ai": true,
+      "company": "DeepSeek",
+      "tone": 5
+    },
+    "430": {
+      "ai": false,
+      "company": "none",
+      "tone": 2
+    },
+    "407": {
+      "ai": false,
+      "company": "DeepSeek",
+      "tone": 3
+    },
+    "383": {
+      "ai": true,
+      "company": "Google",
+      "tone": 3
+    },
+    "570": {
+      "ai": true,
+      "company": "none",
+      "tone": 4
+    },
+    "381": {
+      "ai": false,
+      "company": "Google",
+      "tone": 3
+    },
+    "377": {
+      "ai": true,
+      "company": "Meta",
+      "tone": 4
+    },
+    "456": {
+      "ai": true,
+      "company": "Anthropic",
+      "tone": 2
+    },
+    "488": {
+      "ai": true,
+      "company": "none",
+      "tone": 3
+    },
+    "432": {
+      "ai": false,
+      "company": "none",
+      "tone": 3
+    },
+    "579": {
+      "ai": true,
+      "company": "Anthropic",
+      "tone": 4
+    },
+    "395": {
+      "ai": true,
+      "company": "Google",
+      "tone": 5
+    },
+    "429": {
+      "ai": true,
+      "company": "none",
+      "tone": 3
+    },
+    "444": {
+      "ai": false,
+      "company": "none",
+      "tone": 3
+    },
+    "388": {
+      "ai": true,
+      "company": "Google",
+      "tone": 3
+    }
+  }
+}
