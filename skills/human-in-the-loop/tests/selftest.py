@@ -116,6 +116,15 @@ with sync_playwright() as p:
         },
         "review: export keys",
     )
+    fenced = page.evaluate(
+        "md('до\\n```json\\n{\\n  \"a\": \"<b> `x`\"\\n}\\n```\\nпосле `y`')"
+    )
+    check(
+        fenced
+        == '<p>до</p><pre><code>{\n  &quot;a&quot;: &quot;&lt;b&gt; `x`&quot;\n}</code></pre>'
+        "<p>после <code>y</code></p>",
+        f"markdown: fenced code block keeps line breaks and is escaped ({fenced})",
+    )
     page.reload()
     check(
         page.evaluate("exportJson()")["items"] == exp["items"],

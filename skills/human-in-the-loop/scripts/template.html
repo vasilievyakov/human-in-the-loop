@@ -38,6 +38,8 @@
   .md p { margin: 6px 0; } .md ul, .md ol { margin: 6px 0; padding-left: 22px; }
   .md h1 { font-size: 20px; margin: 4px 0 8px; } .md h2 { font-size: 18px; margin: 4px 0 8px; } .md h3, .md h4 { font-size: 15px; margin: 4px 0 6px; }
   .md code { background: #f0efe9; padding: 1px 5px; border-radius: 4px; font-size: 13px; }
+  .md pre { background: #f0efe9; padding: 10px 12px; border-radius: 6px; margin: 8px 0; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; line-height: 1.5; }
+  .md pre code { background: none; padding: 0; }
   .md table { border-collapse: collapse; margin: 8px 0; font-size: 14px; }
   .md th, .md td { border: 1px solid var(--line); padding: 5px 10px; text-align: left; }
   .md th { background: #f3f2ec; }
@@ -102,7 +104,7 @@ let state = JSON.parse(localStorage.getItem(KEY) || "null") || blank();
 const ist = id => (state.items[id] ||= { status: "", comment: "", markdown: null, answers: {}, notes: {} });
 const byId = id => SPEC.items.find(i => i.id === id);
 
-/* ---------- tiny markdown: headings, lists, tables, bold, code, paragraphs ---------- */
+/* ---------- tiny markdown: headings, lists, tables, bold, code, fenced code blocks, paragraphs ---------- */
 const esc = s => String(s ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 const inline = s => esc(s).replace(/`([^`]+)`/g, "<code>$1</code>").replace(/\*\*(.+?)\*\*/g, "<strong>$1</strong>");
 function md(src) {
@@ -110,6 +112,11 @@ function md(src) {
   while (i < lines.length) {
     const l = lines[i]; let m;
     if (!l.trim()) { i++; continue; }
+    if ((m = l.match(/^\s*(`{3,}|~{3,})/))) {
+      const close = new RegExp("^\\s*" + m[1][0] + "{" + m[1].length + ",}\\s*$"), body = []; i++;
+      while (i < lines.length && !close.test(lines[i])) body.push(lines[i++]);
+      i++; html += `<pre><code>${esc(body.join("\n"))}</code></pre>`; continue;
+    }
     if ((m = l.match(/^(#{1,4}) (.+)/))) { html += `<h${m[1].length}>${inline(m[2])}</h${m[1].length}>`; i++; continue; }
     if (l.startsWith("|")) {
       const rows = []; while (i < lines.length && lines[i].startsWith("|")) rows.push(lines[i++]);
@@ -127,7 +134,7 @@ function md(src) {
       }
       const tag = ul ? "ul" : "ol"; html += `<${tag}>` + items.map(t => `<li>${inline(t)}</li>`).join("") + `</${tag}>`; continue;
     }
-    const para = []; while (i < lines.length && lines[i].trim() && !/^(#{1,4} |\||\s*- |\s*\d+\. )/.test(lines[i])) para.push(lines[i++].trim());
+    const para = []; while (i < lines.length && lines[i].trim() && !/^(#{1,4} |\||\s*- |\s*\d+\. |\s*(`{3,}|~{3,}))/.test(lines[i])) para.push(lines[i++].trim());
     if (!para.length) { para.push(lines[i++].trim()); }
     html += `<p>${inline(para.join(" ")).replace(/\n/g, "<br>")}</p>`;
   }
